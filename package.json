@@ -1,7 +1,7 @@
 {
   "name": "facebook-messenger",
   "version": "1.0.0",
-  "description": "facebook para messenger usando nodejs + codeneo",
+  "description": "facebook para messenger usando nodejs",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
