@@ -7,7 +7,7 @@
     "start": "node app.js"
   },
   "devDependencies": {
-  	"express": "*",
+  	"express": "^4.14.0",
   	"body-parser": "*",
   	"request": "*",
   	"jade": "*"
