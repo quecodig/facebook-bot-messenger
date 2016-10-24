@@ -2,9 +2,9 @@
   "name": "facebook-messenger",
   "version": "1.0.0",
   "description": "facebook para messenger usando nodejs + codeneo",
-  "main": "original.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node original.js"
+    "start": "node app.js"
   },
   "author": "QueCodigo",
   "license": "ISC",
