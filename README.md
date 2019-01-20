@@ -7,6 +7,8 @@ Once the repository is cloned, install all your dependencies in your site, using
 
 `` `sh
 $ cd facebook-messenger
+
 $ npm install
+
 $ npm start
 `` `
