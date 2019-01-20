@@ -6,10 +6,7 @@ Recognition to: https://www.facebook.com/DevelopersManchay/
 Once the repository is cloned, install all your dependencies in your site, using the following commands:
 
 ```sh
-
 $ cd facebook-messenger
-
 $ npm install
-
 $ npm start
 ```
