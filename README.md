@@ -1,5 +1,6 @@
 Improvement of the bot for more control of the functions when controlling the chat, available for execution with heroku and preview in fb: @QueCodigoPG
-Recognition to: https://www.facebook.com/DevelopersManchay/
+
+Recognition to: https://www.facebook.com/DevelopersManchay/ @jesteban19
 
 ### Installation
 
