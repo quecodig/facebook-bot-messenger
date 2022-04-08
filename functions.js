@@ -108,6 +108,7 @@ function enviarMensajeImagen(senderID){
 //enviar texto plano
 function enviarMensajeTexto(senderID, mensaje){
 	var messageData = {
+		messaging_type: "RESPONSE",
 		recipient : {
 			id: senderID
 		},
