@@ -146,7 +146,7 @@ function getClima(callback){
 function callSendAPI(messageData){
 	//api de facebook
 	request({
-		uri: 'https://graph.facebook.com/v2.6/me/messages',
+		uri: 'https://graph.facebook.com/v13.0/me/messages',
 		qs: {access_token: config.token},
 		method: 'POST',
 		json: messageData
