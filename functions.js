@@ -154,7 +154,7 @@ function callSendAPI(messageData){
 		if(error)
 			console.log('No es posible enviar el mensaje');
 		else
-			console.log('Mensaje enviado');
+			console.log('Mensaje enviado '+messageData);
 	});
 }
 
