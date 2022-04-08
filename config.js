@@ -1,5 +1,5 @@
 const port = process.env.PORT || 8080;
-const token = "EAAYMBvv1llABAAEu2YlscRMIZBc2wkHtoB3CxN99WbpufDSsCD2aaPMRCK6JlkvnY6tM99vlHZB25WeFCCJCBZAvfH3kfHZC9FZAQRX33omqvh8PqJLBurgtWfqxEZBMlxLLxq9biA85LhPQzZB4ijzL6i9f7NXnmuq7hsWYxOtrTJuU1UvyRroyNw6cGrVLORcRbtoTrY14QZDZD";
+const token = "EAAYMBvv1llABACWZBypP2ZBh44uONT5o1ZCHR020w8Wdf8UskpNtS6TRbiJJuvsmEaWBQaZAy2ml9vu5aqutuujIn0W7Gd7HjsqP2TkXAZBWGJ7Hs8OPc04y35ZAxSeUtc64R7ZBY96ZAWEqPgRCR02qcdt8IiNFhdHZC2uto70j0fILZAmDiykckYpwBpWCuFVrPHg8ZC7deoUvgZDZD";
 
 exports.port = port;
 exports.token = token;
