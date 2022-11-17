@@ -1,0 +1,17 @@
+{
+	"name": "WhastApp-Message",
+	"version": "1.0.0",
+	"description": "WhastApp para Message usando nodejs",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"author": "QueCodigo",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "*",
+		"express": "*",
+		"request": "*",
+		"jade": "*"
+	}
+}
