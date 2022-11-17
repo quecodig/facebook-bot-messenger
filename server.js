@@ -30,7 +30,7 @@ function iniciar(port) {
 					if (messagingEvent.message) {
 						functions.getMessage(messagingEvent);
 					}
-				});
+				});s
 			});
 		}
 		if (data.object == "whatsapp_business_account") {
