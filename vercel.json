@@ -1,5 +1,10 @@
 {
 	"version": 2,
+	"functions": {
+		"app.js": {
+			"runtime": "@now/node"
+		}
+	},
 	"builds": [
 		{
 			"src": "./app.js",
