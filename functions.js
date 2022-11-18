@@ -10,7 +10,7 @@ function getMessageWP(event){
 	console.log("El mensaje es "+senderMessage)
 	if(isContain(senderMessage,'hola') || isContain(senderMessage,'Hola')){
 		var mensaje = "Hola soy un bot, estos son los comandos que me puedes decir"
-		sendMessageWP(senderID, mensaje, ()=>{
+		sendMessageWP(senderID, mensaje, (e)=>{
 			console.log(e);
 		})
 	}
