@@ -16,14 +16,18 @@ function iniciar(port) {
 	app.get("/", router.index);
 	app.get("/temple/:id", function (req, res){
 		const senderID = req.params.id;
-		functions.sendMessageTemplateWP(senderID);
-		res.send("Mensaje enviado a: +"+senderID);
+		functions.sendMessageTemplateWP(senderID, (e)=>{
+			res.send("Mensaje a: +"+senderID+" Respuesta: "+e.statusCode);
+			console.log(e);
+		});
 	});
 	app.get("/send/:id/:message", function (req, res){
 		const senderID = req.params.id;
 		const mensaje = req.params.message;
-		functions.sendMessageWP(senderID, mensaje);
-		res.send("Mensaje enviado a: +"+senderID);
+		functions.sendMessageWP(senderID, mensaje, (e)=>{
+			res.send("Mensaje a: +"+senderID+" Respuesta: "+e.statusCode);
+			console.log(e)
+		});
 	});
 	app.get("/webhook", function (req, res) {
 		if (req.query["hub.verify_token"] === TokenValid) {

@@ -10,7 +10,9 @@ function getMessageWP(event){
 	console.log("El mensaje es "+senderMessage)
 	if(isContain(senderMessage,'hola') || isContain(senderMessage,'Hola')){
 		var mensaje = "Hola soy un bot, estos son los comandos que me puedes decir"
-		sendMessageWP(senderID, mensaje)
+		sendMessageWP(senderID, mensaje, ()=>{
+			console.log(e);
+		})
 	}
 }
 
@@ -134,7 +136,7 @@ function enviarMensajeTexto(senderID, mensaje){
 	callSendAPI(messageData);
 }
 
-function sendMessageWP(senderID, mensaje){
+function sendMessageWP(senderID, mensaje, callback){
 	var messageData = {
 		messaging_product: "whatsapp",
 		recipient_type: "individual",
@@ -146,10 +148,10 @@ function sendMessageWP(senderID, mensaje){
 		}
 	}
 
-	callSendAPIWP(messageData);
+	return callSendAPIWP(messageData, callback);
 }
 
-function sendMessageTemplateWP(senderID){
+function sendMessageTemplateWP(senderID, callback){
 	var messageData = {
 		messaging_product: "whatsapp",
 		type: "template",
@@ -162,7 +164,7 @@ function sendMessageTemplateWP(senderID){
 		}
 	}
 
-	callSendAPIWP(messageData);
+	return callSendAPIWP(messageData, callback);
 }
 
 //formatear el texto de regreso al cliente
@@ -205,7 +207,7 @@ function callSendAPI(messageData){
 	});
 }
 
-function callSendAPIWP(messageData){
+function callSendAPIWP(messageData, callback){
 	//api de WhatsApp
 	request({
 		uri: 'https://graph.facebook.com/v14.0/'+config.numberID+'/messages',
@@ -213,10 +215,13 @@ function callSendAPIWP(messageData){
 		method: 'POST',
 		json: messageData
 	},function(error, response, data){
-		if(error)
+		if(error){
 			console.log('No es posible enviar el mensaje');
-		else
+			return callback(error);
+		}else{
 			console.log('Mensaje enviado '+JSON.stringify(messageData));
+			return callback(response);
+		}
 		console.log('Mensaje enviado '+JSON.stringify(response));
 	});
 }
