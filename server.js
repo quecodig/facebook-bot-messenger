@@ -13,6 +13,11 @@ function iniciar(port) {
 		console.log("Server listen localhost:" + port);
 	});
 	app.get("/", router.index);
+	app.get("/send/:id/:message", function (req, res){
+		const SenderID = req.params.id;
+		const mensaje = req.params.message;
+		enviarMensajeTexto(senderID, mensaje);
+	});
 	app.get("/webhook", function (req, res) {
 		if (req.query["hub.verify_token"] === "QCTOKEN9901") {
 			res.send(req.query["hub.challenge"]);
