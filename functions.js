@@ -6,6 +6,7 @@ function getMessageWP(event){
 	var senderID = message.from
 	var senderMessage = message.text.body
 
+	console.log("Esto es del .env "+process.env.TokenWP);
 	console.log("Mensaje recibido de "+senderID)
 	console.log("El mensaje es "+senderMessage)
 	if(isContain(senderMessage,'hola') || isContain(senderMessage,'Hola')){
