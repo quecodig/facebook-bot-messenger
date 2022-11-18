@@ -1,4 +1,4 @@
-sconst request = require('request');
+const request = require('request');
 const config = require('./config');
 
 function getMessageWP(event){
