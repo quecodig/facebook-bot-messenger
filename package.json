@@ -1,4 +1,4 @@
-s{
+{
 	"name": "WhastApp-Message",
 	"version": "1.0.0",
 	"description": "WhastApp para Message usando nodejs",
@@ -12,6 +12,7 @@ s{
 		"body-parser": "*",
 		"express": "*",
 		"request": "*",
-		"jade": "*"
+		"jade": "*",
+		"@vercel/node"
 	}
 }
