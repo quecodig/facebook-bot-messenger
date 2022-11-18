@@ -1,7 +1,9 @@
+const dotenv = require('dotenv').config();
+
 const port = process.env.PORT || 8080;
-const tokenMS = "EAAYMBvv1llABACWZBypP2ZBh44uONT5o1ZCHR020w8Wdf8UskpNtS6TRbiJJuvsmEaWBQaZAy2ml9vu5aqutuujIn0W7Gd7HjsqP2TkXAZBWGJ7Hs8OPc04y35ZAxSeUtc64R7ZBY96ZAWEqPgRCR02qcdt8IiNFhdHZC2uto70j0fILZAmDiykckYpwBpWCuFVrPHg8ZC7deoUvgZDZD";
-const tokenWP = "EAAPM5ZCZCCjFYBAByfLrmLLz8KrewKJPH5EpimNlkjKAVa7rQcytUZBMgUYXMdrNWAqFiWuUABdIFtZCJdoQXvZAFeBrUOIhhfZBTR1jgD194zXUjZArLRHiDZALgXZAj6NANlZBZCFOsOu59esOpaURfqHrQs9buZBYTDseAfLNxiL92mp52P8VTEYSYuxz9edJo27WZAedK500rhAZDZD";
-const numberID = "105138728995827"
+const tokenMS = process.env.TokenMS;
+const tokenWP = process.env.TokenWP;
+const numberID = process.env.NumberID;
 
 exports.port = port;
 exports.tokenMS = tokenMS;

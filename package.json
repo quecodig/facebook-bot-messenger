@@ -9,8 +9,9 @@
 	"author": "QueCodigo",
 	"license": "ISC",
 	"dependencies": {
+		"dotenv": "^16.0.3",
 		"express": "*",
-		"request": "*",
-		"pug": "*"
+		"pug": "*",
+		"request": "*"
 	}
 }
