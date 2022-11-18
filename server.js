@@ -22,7 +22,6 @@ function iniciar(port) {
 
 	app.post("/webhook", function (req, res) {
 		var data = req.body;
-		//console.log(JSON.stringify(req.body, null, 2));
 		if (data.object == "page") {
 			data.entry.forEach(function (pageEntry) {
 				pageEntry.messaging.forEach(function (messagingEvent) {
