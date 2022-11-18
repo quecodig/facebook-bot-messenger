@@ -1,5 +1,10 @@
 {
-  "rewrites": [{
-    "source": "/(.*)", "destination": "/app.js"
-  }]
+	"functions": {
+		"app.js": {
+			"runtime": "@now/node@1.6.1"
+		}
+	},
+	"rewrites": [{
+		"source": "/(.*)", "destination": "/app.js"
+	}]
 }
