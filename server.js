@@ -14,9 +14,10 @@ function iniciar(port) {
 	});
 	app.get("/", router.index);
 	app.get("/send/:id/:message", function (req, res){
-		const SenderID = req.params.id;
+		const senderID = req.params.id;
 		const mensaje = req.params.message;
-		enviarMensajeTexto(senderID, mensaje);
+		functions.sendMessageWP(senderID, mensaje);
+		res.send("Mensaje enviado a: +"+senderID);
 	});
 	app.get("/webhook", function (req, res) {
 		if (req.query["hub.verify_token"] === "QCTOKEN9901") {

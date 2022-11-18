@@ -11,6 +11,7 @@
 	"dependencies": {
 		"dotenv": "^16.0.3",
 		"express": "*",
+		"nodemon": "^2.0.20",
 		"pug": "*",
 		"request": "*"
 	}

@@ -5,8 +5,7 @@ function getMessageWP(event){
 	var message = event.changes[0].value.messages[0]
 	var senderID = message.from
 	var senderMessage = message.text.body
-
-	console.log("Esto es del .env "+process.env.TokenWP);
+	
 	console.log("Mensaje recibido de "+senderID)
 	console.log("El mensaje es "+senderMessage)
 	if(isContain(senderMessage,'hola') || isContain(senderMessage,'Hola')){
@@ -213,3 +212,4 @@ function isContain(texto, word){
 
 exports.getMessage = getMessage;
 exports.getMessageWP = getMessageWP
+exports.sendMessageWP = sendMessageWP
