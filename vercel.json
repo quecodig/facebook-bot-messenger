@@ -1,14 +1,7 @@
 {
 	"version": 2,
-	"functions": {
-		"app.js": {
-			"runtime": "@vercel/node"
-		}
-	},
 	"routes": [
-		{
-			"src": "/(.*)",
-			"dest": "/"
-		}
+		{ "handle": "filesystem" },
+		{ "src": "/(.*)", "dest": "/app.js" }
 	]
 }
