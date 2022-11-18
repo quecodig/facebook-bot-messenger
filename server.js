@@ -1,13 +1,12 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const path = require("path");
 const router = require("./router");
 const functions = require("./functions");
 function iniciar(port) {
 	var app = express();
-	app.use(bodyParser.json());
+	app.use(express.json());
 	app.set("views", __dirname + "/views");
-	app.set("view engine", "jade");
+	app.set("view engine", "pug");
 	app.use(express.static(path.join(__dirname, "public")));
 	app.listen(port, function () {
 		console.log("Server listen localhost:" + port);

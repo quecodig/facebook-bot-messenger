@@ -9,9 +9,8 @@
 	"author": "QueCodigo",
 	"license": "ISC",
 	"dependencies": {
-		"body-parser": "*",
 		"express": "*",
 		"request": "*",
-		"jade": "*"
+		"pug": "*"
 	}
 }
