@@ -8,9 +8,7 @@ function iniciar(port) {
 	app.set("views", __dirname + "/views");
 	app.set("view engine", "pug");
 	app.use(express.static(path.join(__dirname, "public")));
-	app.listen(port, function () {
-		console.log("Server listen localhost:" + port);
-	});
+	app.listen(port);
 	app.get("/", router.index);
 	app.get("/webhook", function (req, res) {
 		if (req.query["hub.verify_token"] === "QCTOKEN9901") {
