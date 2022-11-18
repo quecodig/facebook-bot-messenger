@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const router = require("./router");
 const functions = require("./functions");
+const { TokenValid } = require("./config");
 function iniciar(port) {
 	var app = express();
 	app.use(express.urlencoded({ extended: false }));
@@ -13,6 +14,11 @@ function iniciar(port) {
 		console.log("Server listen localhost:" + port);
 	});
 	app.get("/", router.index);
+	app.get("/temple/:id", function (req, res){
+		const senderID = req.params.id;
+		functions.sendMessageTemplateWP(senderID);
+		res.send("Mensaje enviado a: +"+senderID);
+	});
 	app.get("/send/:id/:message", function (req, res){
 		const senderID = req.params.id;
 		const mensaje = req.params.message;
@@ -20,7 +26,7 @@ function iniciar(port) {
 		res.send("Mensaje enviado a: +"+senderID);
 	});
 	app.get("/webhook", function (req, res) {
-		if (req.query["hub.verify_token"] === "QCTOKEN9901") {
+		if (req.query["hub.verify_token"] === TokenValid) {
 			res.send(req.query["hub.challenge"]);
 		} else {
 			res.send("Tu no tienes que entrar aqui");
@@ -29,7 +35,6 @@ function iniciar(port) {
 
 	app.post("/webhook", function (req, res) {
 		var data = req.body;
-		//console.log(JSON.stringify(req.body, null, 2));
 		if (data.object == "page") {
 			data.entry.forEach(function (pageEntry) {
 				pageEntry.messaging.forEach(function (messagingEvent) {

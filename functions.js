@@ -5,7 +5,7 @@ function getMessageWP(event){
 	var message = event.changes[0].value.messages[0]
 	var senderID = message.from
 	var senderMessage = message.text.body
-	
+
 	console.log("Mensaje recibido de "+senderID)
 	console.log("El mensaje es "+senderMessage)
 	if(isContain(senderMessage,'hola') || isContain(senderMessage,'Hola')){
@@ -149,6 +149,22 @@ function sendMessageWP(senderID, mensaje){
 	callSendAPIWP(messageData);
 }
 
+function sendMessageTemplateWP(senderID){
+	var messageData = {
+		messaging_product: "whatsapp",
+		type: "template",
+		to: senderID,
+		template: {
+			name: "bienvenido",
+			language: {
+				code: "es"
+			}
+		}
+	}
+
+	callSendAPIWP(messageData);
+}
+
 //formatear el texto de regreso al cliente
 
 function getMessageCLima(temperatura){
@@ -213,3 +229,4 @@ function isContain(texto, word){
 exports.getMessage = getMessage;
 exports.getMessageWP = getMessageWP
 exports.sendMessageWP = sendMessageWP
+exports.sendMessageTemplateWP = sendMessageTemplateWP
